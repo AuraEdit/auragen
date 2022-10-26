@@ -1,4 +1,4 @@
-# Dark Generator
+# Aura Generator
 Hediye Kartları İçin Geniş Bir Üretici Aracıdır, AuraEdit Tarafından Yapılmıştır.
 
 ## Bilgi
