@@ -62,9 +62,11 @@ def options():
         clearcmd()
         generators()
     elif USER_OPTION == "2":
-        pass
+        underdev()
+        options()
     elif USER_OPTION == "3":
-        pass
+        underdev()
+        options()
     elif USER_OPTION == "4":
         clearcmd()
         quit()
@@ -98,9 +100,10 @@ def generators():
     [5] Steam Hediye Kartı Üretici
     [6] Google Play Hediye Kartı Üretici
     [7] Spotfiy Hediye Kartı Üretici
+    [8] Discord Hediye Kartı Üretici
 
-    [8] Bilgi
-    [9] Geri
+    [9] Bilgi
+    [10] Geri
     
     
     """)
@@ -127,9 +130,12 @@ def generators():
         clearcmd()
         spotify()
     elif USER_OPTION == "8":
-        underdev()
-        generators()
+        clearcmd()
+        nitro()
     elif USER_OPTION == "9":
+        underdev()
+        options()
+    elif USER_OPTION == "10":
         clearcmd()
         options()
     else:
@@ -380,7 +386,45 @@ def spotify():
     back()
     clearcmd()
     generators()
+    
+def nitro():
+    CHARACTERS = "ABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890"
+    print(pyfade.Fade.Horizontal(pyfade.Colors.green_to_red,"""
+   
+	███╗   ██╗██╗████████╗██████╗  ██████╗ 
+	████╗  ██║██║╚══██╔══╝██╔══██╗██╔═══██╗
+	██╔██╗ ██║██║   ██║   ██████╔╝██║   ██║
+	██║╚██╗██║██║   ██║   ██╔══██╗██║   ██║
+	██║ ╚████║██║   ██║   ██║  ██║╚██████╔╝
+	╚═╝  ╚═══╝╚═╝   ╚═╝   ╚═╝  ╚═╝ ╚═════╝ 
+                                       
 
+    """))
+    print(f'''{Fore.LIGHTWHITE_EX}                    [Yapımcı {Fore.YELLOW}AuraEdit#1447 {Fore.LIGHTWHITE_EX}]
+  {Fore.LIGHTWHITE_EX}
+  ''')
+    print(f"{Fore.YELLOW}[*]{Fore.LIGHTWHITE_EX} Kuruluyor...")
+    time.sleep(1)
+    print(f"\nNitro Hediye Kartı Formatı: {Fore.YELLOW}XXXX-XXXXXX-XXXXX\n")
+    howmany = input(f"{Fore.RED}{curtime} {Fore.BLUE}[?] Kaç Tane Oluşturmak İstiyorsunuz, Bu Önceki Hediye Kartlarını Kaldıracaktır: ")
+
+    with open("./generated/nitro.txt", "w+") as file:
+        for i in range(int(howmany)):
+            firstrandom = ''.join(random.choice(CHARACTERS) for i in range(int(4)))
+            secondrandom = ''.join(random.choice(CHARACTERS) for i in range(int(5)))
+            thirdrandom = ''.join(random.choice(CHARACTERS) for i in range(int(5)))
+            fourthrandom = ''.join(random.choice(CHARACTERS) for i in range(int(5)))
+
+            result = firstrandom + "-" + secondrandom + "-" + thirdrandom + "-" + fourthrandom
+            file.write(result)
+            file.write("\n")
+    print(f"{Fore.RED}{curtime} {Fore.YELLOW}[*]{Fore.LIGHTWHITE_EX} Üretiliyor...")
+    time.sleep(1)
+    file.close()
+    print(f"{Fore.RED}{curtime} {Fore.GREEN}[+]{Fore.LIGHTWHITE_EX} Hediye Kartları {Fore.YELLOW}{howmany}{Fore.LIGHTWHITE_EX} Başarıyla Üretildi ./generated/nitro.txt")
+    back()
+    clearcmd()
+    generators()
 
 
 # Main Code
